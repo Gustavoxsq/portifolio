@@ -1,39 +1,98 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carlos Gustavo - Desenvolvedor Full Stack</title>
+    <title data-i18n="title">Carlos Gustavo - Desenvolvedor Full Stack</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        .theme-toggle-and-lang {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .lang-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .lang-buttons button {
+            background-color: transparent;
+            border: 1px solid #555;
+            color: #555;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .lang-buttons button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+        
+        .lang-buttons button.active {
+            background-color: #000dff;
+            color: #fff;
+            border-color: #000dff;
+        }
+        
+        @media (max-width: 600px) {
+            .theme-toggle {
+                font-size: 1rem;
+            }
+            .lang-buttons {
+                gap: 4px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
-    </div>
-
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="profile-container">
                     <div class="profile-image">
-                        <img src="imagens/eu.jpg" alt="Foto profissional de Carlos Gustavo" />
+                        <img src="imagens/eu.jpg" alt="Foto profissional de Carlos Gustavo" data-i18n-alt="profile_photo" />
                     </div>
                 </div>
                 <div class="header-text">
-                    <h1>Carlos Gustavo</h1>
-                    <h2>Desenvolvedor Full Stack</h2>
-                    <div class="badge">JavaScript</div>
-                    <div class="badge">HTML/CSS</div>
-                    <div class="badge">C#</div>
-                    <div class="badge">Unity 3D</div>
+                    <div class="theme-toggle-and-lang">
+                        <div class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="lang-buttons">
+                            <button id="ptBtn" class="active">PT</button>
+                            <button id="enBtn">EN</button>
+                        </div>
+                    </div>
+
+                    <h1 data-i18n="name">Carlos Gustavo</h1>
+                    <h2 data-i18n="title_h2">Desenvolvedor Full Stack</h2>
+
+                    <div class="badge" data-i18n="badge_js">JavaScript</div>
+                    <div class="badge" data-i18n="badge_htmlcss">HTML/CSS</div>
+                    <div class="badge" data-i18n="badge_csharp">C#</div>
+                    <div class="badge" data-i18n="badge_unity">Unity 3D</div>
+
                     <div class="contact-info">
-                        <div class="contact-item"><i class="fas fa-envelope"></i><span>Carlosgcbdh@gmail.com</span></div>
-                        <div class="contact-item"><i class="fas fa-phone"></i><span>+351 926 268 368</span></div>
-                        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Portugal</span></div>
+                        <div class="contact-item"><i class="fas fa-envelope"></i><span data-i18n="contact_email">Carlosgcbdh@gmail.com</span></div>
+                        <div class="contact-item"><i class="fas fa-phone"></i><span data-i18n="contact_phone">+351 926 268 368</span></div>
+                        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="contact_location">Portugal</span></div>
                     </div>
                 </div>
             </div>
@@ -43,36 +102,190 @@
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-list">
-                <li class="nav-item"><a href="#sobre" class="active">Sobre</a></li>
-                <li class="nav-item"><a href="#educacao">Formação</a></li>
-                <li class="nav-item"><a href="#habilidades">Habilidades</a></li>
-                <li class="nav-item"><a href="#experiencia">Experiência</a></li>
-                <li class="nav-item"><a href="#projetos">Jogos</a></li>
-                <li class="nav-item"><a href="#sites">Sites</a></li>
-                <li class="nav-item"><a href="#contato">Contato</a></li>
+                <li class="nav-item"><a href="#sobre" class="active" data-i18n="nav_sobre">Sobre</a></li>
+
+                <li class="nav-item"><a href="#gustavo-app-section" data-i18n="nav_app">Aplicativo</a></li>
+
+                <li class="nav-item"><a href="#diplomas" data-i18n="nav_educacao">Formação</a></li>
+                <li class="nav-item"><a href="#habilidades" data-i18n="nav_habilidades">Habilidades</a></li>
+                <li class="nav-item"><a href="#experiencia" data-i18n="nav_experiencia">Experiência</a></li>
+                <li class="nav-item"><a href="#projetos" data-i18n="nav_projetos">Jogos</a></li>
+                <li class="nav-item"><a href="#sites" data-i18n="nav_sites">Sites</a></li>
+                <li class="nav-item"><a href="#contato" data-i18n="nav_contato">Contato</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
         <section class="section" id="sobre">
-            <h2 class="section-title">Sobre Mim</h2>
+            <h2 class="section-title" data-i18n="sobre_title">Sobre Mim</h2>
             <div class="about-content">
-                <p>Olá! Meu nome é Carlos Gustavo, tenho 21 anos e sou apaixonado por tecnologia e desenvolvimento de software. Desde cedo, mergulhei nesse universo com entusiasmo, e a cada nova linha de código que escrevo, reforço a certeza de que essa
-                    é a minha verdadeira vocação.</p>
-                <p>Sou movido pela curiosidade, criatividade e pelo desejo constante de aprender. Já desenvolvi projetos próprios e criei este site com o propósito de partilhar um pouco do meu trabalho e da minha jornada no mundo da programação.</p>
-                <p>Acredito que a tecnologia tem o poder de transformar ideias em soluções reais — e é exatamente isso que me motiva todos os dias. Tenho formação prática em C# com foco em desenvolvimento de jogos 3D, onde exercitei minha lógica e criatividade
-                    ao máximo.</p>
-                <p>Atualmente, estou aprofundando meus conhecimentos em HTML, CSS e JavaScript, com foco em desenvolvimento web, enquanto continuo expandindo minhas competências em outras linguagens e ferramentas.</p>
-                <p>Este site é apenas o começo. Tenho muitos projetos e ideias em andamento, e estou comprometido em crescer profissionalmente, contribuir com soluções inovadoras e gerar impacto positivo através da tecnologia.</p>
-                <p>Se procura alguém dedicado, criativo, com sede de aprender e evoluir constantemente, será um prazer fazer parte do seu time.</p>
+
+                <p data-i18n="sobre_p1">
+                    Olá! Meu nome é Carlos Gustavo, tenho 21 anos e sou apaixonado por tecnologia e desenvolvimento de software. Desde cedo, mergulhei nesse universo com entusiasmo, e a cada nova linha de código que escrevo, reforço a certeza de que essa é a minha verdadeira
+                    vocação.
+                </p>
+
+                <p data-i18n="sobre_p2">
+                    Sou movido pela curiosidade, criatividade e pelo desejo constante de aprender. Já desenvolvi projetos próprios e criei este site com o propósito de partilhar um pouco do meu trabalho e da minha jornada no mundo da programação.
+                </p>
+
+                <p data-i18n="sobre_p3">
+                    Acredito que a tecnologia tem o poder de transformar ideias em soluções reais — e é exatamente isso que me motiva todos os dias. Tenho formação prática em C# com foco em desenvolvimento de jogos 3D, onde exercitei minha lógica e criatividade ao máximo.
+                </p>
+
+                <p data-i18n="sobre_p4">
+                    Atualmente, estou aprofundando meus conhecimentos em HTML, CSS e JavaScript, com foco em desenvolvimento web, enquanto continuo expandindo minhas competências em outras linguagens e ferramentas.
+                </p>
+
+                <p data-i18n="sobre_p5">
+                    Este site é apenas o começo. Tenho muitos projetos e ideias em andamento, e estou comprometido em crescer profissionalmente, contribuir com soluções inovadoras e gerar impacto positivo através da tecnologia.
+                </p>
+
+                <p data-i18n="sobre_p6">
+                    Se procura alguém dedicado, criativo, com sede de aprender e evoluir constantemente, será um prazer fazer parte do seu time.
+                </p>
             </div>
         </section>
 
-        <section class="section" id="diplomas">
-            <h2 class="section-title">Diplomas & Certificados</h2>
-            <div class="projects-grid">
+        <section id="gustavo-app-section" class="app-highlight">
 
+            <style>
+                .app-highlight {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 80px 20px;
+                    background: linear-gradient(135deg, #6b73ff, #000dff);
+                    color: #fff;
+                }
+                
+                .gustavo-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-width: 1200px;
+                    width: 100%;
+                    gap: 40px;
+                    align-items: center;
+                }
+                
+                .gustavo-info {
+                    flex: 1 1 500px;
+                }
+                
+                .gustavo-info h2 {
+                    font-size: 2rem;
+                    margin-bottom: 20px;
+                }
+                
+                .gustavo-info .app-desc {
+                    font-size: 1.1rem;
+                    margin-bottom: 20px;
+                    line-height: 1.6;
+                }
+                
+                .gustavo-info .app-features {
+                    list-style: none;
+                    padding: 0;
+                    margin-bottom: 25px;
+                }
+                
+                .gustavo-info .app-features li {
+                    margin-bottom: 10px;
+                    font-size: 1rem;
+                    padding-left: 25px;
+                    position: relative;
+                }
+                
+                .gustavo-info .app-features li::before {
+                    content: "✔️";
+                    position: absolute;
+                    left: 0;
+                }
+                
+                .btn-gustavo {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    background-color: #fff;
+                    color: #000dff;
+                    font-weight: bold;
+                    padding: 12px 20px;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    transition: transform 0.2s, box-shadow 0.2s;
+                }
+                
+                .btn-gustavo:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                }
+                
+                .install-note {
+                    font-size: 0.9rem;
+                    margin-top: 10px;
+                    color: #e0e0e0;
+                }
+                
+                .gustavo-preview {
+                    flex: 1 1 400px;
+                    display: flex;
+                    justify-content: center;
+                }
+                
+                .gustavo-preview img {
+                    max-width: 100%;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+                }
+                
+                @media (max-width: 900px) {
+                    .gustavo-container {
+                        flex-direction: column-reverse;
+                        text-align: center;
+                    }
+                    .gustavo-info h2 {
+                        font-size: 1.8rem;
+                    }
+                }
+            </style>
+
+            <div class="gustavo-container">
+                <div class="gustavo-info">
+                    <h2 data-i18n="app_title">✨ GustavoNexus — Seu Hub Profissional em Um Só Lugar</h2>
+
+                    <p class="app-desc" data-i18n="app_desc">
+                        O <strong>GustavoNexus</strong> é um aplicativo moderno para Windows que reúne minhas habilidades, projetos, jogos, experiências profissionais e muito mais — tudo de forma rápida, organizada e elegante.
+                    </p>
+
+                    <ul class="app-features">
+                        <li data-i18n="app_feat1">💼 Perfil Completo — formação, experiências e trajetória</li>
+                        <li data-i18n="app_feat2">🕹️ Projetos & Jogos — vídeos, imagens e detalhes</li>
+                        <li data-i18n="app_feat3">⚡ Rápido e Leve — tecnologia moderna e desempenho suave</li>
+                        <li data-i18n="app_feat4">🎨 Interface Elegante — moderna, intuitiva e responsiva</li>
+                    </ul>
+
+                    <a href="GustavoNexus.exe" download class="btn-gustavo">
+                        <span style="font-size:18px;line-height:1;">⬇️</span>
+                        <span data-i18n="app_btn">Baixar GustavoNexus (Windows)</span>
+                    </a>
+
+                    <p class="install-note" data-i18n="app_note">
+                        Basta executar o instalador e seguir as instruções. Nenhum programa adicional é necessário.
+                    </p>
+                </div>
+
+                <div class="gustavo-preview">
+                    <img src="imagens/fotoapp.png" alt="Print do aplicativo GustavoNexus" data-i18n-alt="app_preview">
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="section" id="diplomas">
+            <h2 class="section-title" data-i18n="diplomas_title">Diplomas & Certificados</h2>
+            <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
                         <a href="https://drive.google.com/file/d/1OeAuIMTOAh44S5gel4SQ_KUNuCjmGkjf/view?usp=sharing" target="_blank" rel="noopener noreferrer">
@@ -80,10 +293,9 @@
                         </a>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Diploma Programação de Videojogos Unity 3D</h3>
+                        <h3 class="project-title" data-i18n="diploma1_title">Diploma Programação de Videojogos Unity 3D</h3>
                     </div>
                 </div>
-
                 <div class="project-card">
                     <div class="project-image">
                         <a href="https://drive.google.com/file/d/1CLQkc04VXpZvRzvrleMIwwdZ79-eI46L/view?usp=sharing" target="_blank" rel="noopener noreferrer">
@@ -91,10 +303,9 @@
                         </a>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Certificado Formação Profissional</h3>
+                        <h3 class="project-title" data-i18n="diploma2_title">Certificado Formação Profissional</h3>
                     </div>
                 </div>
-
                 <div class="project-card">
                     <div class="project-image">
                         <a href="https://drive.google.com/file/d/1wbIGznLloiPLcCxwKnpvdDLQRxsUVLX_/view?usp=sharing" target="_blank" rel="noopener noreferrer">
@@ -102,29 +313,28 @@
                         </a>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Certificado Comunidade Desenvolvedor Unity</h3>
+                        <h3 class="project-title" data-i18n="diploma3_title">Certificado Comunidade Desenvolvedor Unity</h3>
                     </div>
                 </div>
-
             </div>
         </section>
 
-
         <section class="section" id="habilidades">
-            <h2 class="section-title">Habilidades Técnicas</h2>
+            <h2 class="section-title" data-i18n="habilidades_title">Habilidades Técnicas</h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3><i class="fas fa-code"></i>Front-end</h3>
+                    <h3><i class="fas fa-code"></i> <span data-i18n="skill_frontend">Front-end</span></h3>
                     <div class="skill-list">
                         <div class="skill-item"><i class="fab fa-html5"></i>HTML5</div>
                         <div class="skill-item"><i class="fab fa-css3-alt"></i>CSS3</div>
                         <div class="skill-item"><i class="fab fa-js-square"></i>JavaScript</div>
                         <div class="skill-item"><i class="fab fa-react"></i>React</div>
-                        <div class="skill-item"><i class="fas fa-mobile-alt"></i>Responsive Design</div>
+                        <div class="skill-item"><i class="fas fa-mobile-alt"></i><span data-i18n="skill_responsive">Responsive Design</span></div>
                     </div>
                 </div>
+
                 <div class="skill-category">
-                    <h3><i class="fas fa-server"></i>Back-end</h3>
+                    <h3><i class="fas fa-server"></i> <span data-i18n="skill_backend">Back-end</span></h3>
                     <div class="skill-list">
                         <div class="skill-item"><i class="fab fa-node-js"></i>Node.js</div>
                         <div class="skill-item"><i class="fas fa-database"></i>MongoDB</div>
@@ -133,8 +343,9 @@
                         <div class="skill-item"><i class="fas fa-code"></i>.NET</div>
                     </div>
                 </div>
+
                 <div class="skill-category">
-                    <h3><i class="fas fa-gamepad"></i>Desenvolvimento de Jogos</h3>
+                    <h3><i class="fas fa-gamepad"></i> <span data-i18n="skill_game_dev">Desenvolvimento de Jogos</span></h3>
                     <div class="skill-list">
                         <div class="skill-item"><i class="fas fa-cube"></i>Unity 3D</div>
                         <div class="skill-item"><i class="fas fa-code"></i>C# para Jogos</div>
@@ -143,46 +354,47 @@
                         <div class="skill-item"><i class="fas fa-vr-cardboard"></i>VR Development</div>
                     </div>
                 </div>
+
                 <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i>Ferramentas & Outros</h3>
+                    <h3><i class="fas fa-tools"></i> <span data-i18n="skill_tools">Ferramentas & Outros</span></h3>
                     <div class="skill-list">
                         <div class="skill-item"><i class="fab fa-git-alt"></i>Git</div>
                         <div class="skill-item"><i class="fab fa-github"></i>GitHub</div>
                         <div class="skill-item"><i class="fas fa-terminal"></i>Terminal</div>
                         <div class="skill-item"><i class="fas fa-pencil-ruler"></i>UI/UX Design</div>
-                        <div class="skill-item"><i class="fas fa-language"></i>Inglês Avançado</div>
+                        <div class="skill-item"><i class="fas fa-language"></i><span data-i18n="skill_english">Inglês: Intermediário</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="section" id="experiencia">
-            <h2 class="section-title">Experiência Profissional</h2>
+            <h2 class="section-title" data-i18n="experiencia_title">Experiência Profissional</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-date"><i class="fas fa-calendar"></i>2021 - Presente</div>
-                        <h3 class="timeline-title">Desenvolvedor Full Stack Freelancer</h3>
-                        <div class="timeline-company">Trabalho Autônomo</div>
-                        <p class="timeline-description">Desenvolvimento de aplicações web completas desde o front-end até o back-end. Criação de sites responsivos, aplicações web interactivas e integração com APIs. Trabalho com diversas tecnologias incluindo React, Node.js, MongoDB
-                            e ferramentas modernas de desenvolvimento.</p>
+                        <div class="timeline-date"><i class="fas fa-calendar"></i> <span data-i18n="exp1_date">2021 - Presente</span></div>
+                        <h3 class="timeline-title" data-i18n="exp1_title">Desenvolvedor Full Stack Freelancer</h3>
+                        <div class="timeline-company" data-i18n="exp1_company">Trabalho Autônomo</div>
+                        <p class="timeline-description" data-i18n="exp1_desc">Desenvolvimento de aplicações web completas desde o front-end até o back-end. Criação de sites responsivos, aplicações web interativas e integração com APIs. Trabalho com diversas tecnologias incluindo React, Node.js, MongoDB e
+                            ferramentas modernas de desenvolvimento.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-date"><i class="fas fa-calendar"></i>2020 - 2021</div>
-                        <h3 class="timeline-title">Desenvolvedor de Jogos Independente</h3>
-                        <div class="timeline-company">Projetos Pessoais</div>
-                        <p class="timeline-description">Desenvolvimento de jogos 3D utilizando Unity e C#. Criação de mechanics inovadoras, design de levels, implementação de inteligência artificial para NPCs e otimização de performance para diferentes plataformas. Publicação de projetos
+                        <div class="timeline-date"><i class="fas fa-calendar"></i> <span data-i18n="exp2_date">2020 - 2021</span></div>
+                        <h3 class="timeline-title" data-i18n="exp2_title">Desenvolvedor de Jogos Independente</h3>
+                        <div class="timeline-company" data-i18n="exp2_company">Projetos Pessoais</div>
+                        <p class="timeline-description" data-i18n="exp2_desc">Desenvolvimento de jogos 3D utilizando Unity e C#. Criação de mecânicas inovadoras, design de levels, implementação de inteligência artificial para NPCs e otimização de performance para diferentes plataformas. Publicação de projetos
                             no YouTube com tutoriais e demonstrações.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-date"><i class="fas fa-calendar"></i>2019 - 2020</div>
-                        <h3 class="timeline-title">Estagiário em Desenvolvimento</h3>
-                        <div class="timeline-company">Empresa de Tecnologia</div>
-                        <p class="timeline-description">Suporte no desenvolvimento de software, participação em reuniões de equipe, aprendizado de metodologias ágeis e contribuição em projetos reais. Desenvolvimento de habilidades em trabalho em equipe, versionamento de código e boas
+                        <div class="timeline-date"><i class="fas fa-calendar"></i> <span data-i18n="exp3_date">2019 - 2020</span></div>
+                        <h3 class="timeline-title" data-i18n="exp3_title">Estagiário em Desenvolvimento</h3>
+                        <div class="timeline-company" data-i18n="exp3_company">Empresa de Tecnologia</div>
+                        <p class="timeline-description" data-i18n="exp3_desc">Suporte no desenvolvimento de software, participação em reuniões de equipe, aprendizado de metodologias ágeis e contribuição em projetos reais. Desenvolvimento de habilidades em trabalho em equipe, versionamento de código e boas
                             práticas de programação.</p>
                     </div>
                 </div>
@@ -190,7 +402,7 @@
         </section>
 
         <section class="section" id="projetos">
-            <h2 class="section-title">Jogos</h2>
+            <h2 class="section-title" data-i18n="projetos_title">Jogos</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
@@ -198,11 +410,11 @@
                         <div class="project-badge">Unity 3D</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Construção Extrema</h3>
-                        <p class="project-description">Um jogo de reflexos e precisão, onde você deve empilhar blocos no tempo certo para alcançar recordes cada vez maiores.</p>
+                        <h3 class="project-title" data-i18n="jogo1_title">Construção Extrema</h3>
+                        <p class="project-description" data-i18n="jogo1_desc">Um jogo de reflexos e precisão, onde você deve empilhar blocos no tempo certo para alcançar recordes cada vez maiores.</p>
                         <div class="project-links">
                             <a href="https://youtu.be/jEpRbdhVNVM?si=vT7RwFEvMi-SX9sp" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-youtube"></i> Ver Jogo
+                                <i class="fab fa-youtube"></i> <span data-i18n="jogo1_link">Ver Jogo</span>
                             </a>
                         </div>
                     </div>
@@ -214,11 +426,11 @@
                         <div class="project-badge">Unity 2D</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Aventura 2D</h3>
-                        <p class="project-description">Um jogo de plataforma em pixel art com fases desafiadoras e inimigos únicos. Criado em Unity com C#.</p>
+                        <h3 class="project-title" data-i18n="jogo2_title">Time Hunt</h3>
+                        <p class="project-description" data-i18n="jogo2_desc">Um jogo de plataforma em pixel art com fases desafiadoras e inimigos únicos. Criado em Unity com C#.</p>
                         <div class="project-links">
                             <a href="https://youtu.be/TVpTe9D3GSc?si=4KCNqoLIDUZvcNNi" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-youtube"></i> Ver Jogo
+                                <i class="fab fa-youtube"></i> <span data-i18n="jogo2_link">Ver Jogo</span>
                             </a>
                         </div>
                     </div>
@@ -230,11 +442,11 @@
                         <div class="project-badge">Unity 3D</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Corrida do Hambúrguer</h3>
-                        <p class="project-description">Um mini game divertido inspirado no Bob Esponja, coletando hambúrgueres no fundo do mar.</p>
+                        <h3 class="project-title" data-i18n="jogo3_title">Corrida do Hambúrguer</h3>
+                        <p class="project-description" data-i18n="jogo3_desc">Um mini game divertido inspirado no Bob Esponja, coletando hambúrgueres no fundo do mar.</p>
                         <div class="project-links">
                             <a href="https://youtu.be/yhSHCAkmloI?si=r6Xx_20yoBajgjoO" class="project-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-youtube"></i> Ver Jogo
+                                <i class="fab fa-youtube"></i> <span data-i18n="jogo3_link">Ver Jogo</span>
                             </a>
                         </div>
                     </div>
@@ -243,19 +455,19 @@
         </section>
 
         <section class="section" id="sites">
-            <h2 class="section-title">Sites</h2>
+            <h2 class="section-title" data-i18n="sites_title">Sites</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
                         <img src="imagens/sitecarro.png" alt="Site Showroom de Carros" />
-                        <div class="project-badge">Website</div>
+                        <div class="project-badge" data-i18n="site_badge1">Website</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Showroom de Carros</h3>
-                        <p class="project-description">Website responsivo para apresentação de carros premium com galeria, catálogo e design moderno.</p>
+                        <h3 class="project-title" data-i18n="site1_title">Showroom de Carros</h3>
+                        <p class="project-description" data-i18n="site1_desc">Website responsivo para apresentação de carros premium com galeria, catálogo e design moderno.</p>
                         <div class="project-links">
                             <a href="https://sitecarcg.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Ver Site
+                                <i class="fas fa-external-link-alt"></i> <span data-i18n="site1_link">Ver Site</span>
                             </a>
                         </div>
                     </div>
@@ -264,14 +476,14 @@
                 <div class="project-card">
                     <div class="project-image">
                         <img src="imagens/troll.png" alt="Pixel Art Troll Game" />
-                        <div class="project-badge">Website</div>
+                        <div class="project-badge" data-i18n="site_badge2">Website</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Pixel Art Troll Game</h3>
-                        <p class="project-description">Um site interativo com mini-jogos em pixel art e desafios de trollagem divertidos.</p>
+                        <h3 class="project-title" data-i18n="site2_title">Pixel Art Troll Game</h3>
+                        <p class="project-description" data-i18n="site2_desc">Um site interativo com mini-jogos em pixel art e desafios de trollagem divertidos.</p>
                         <div class="project-links">
                             <a href="https://site-troll.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Ver Site
+                                <i class="fas fa-external-link-alt"></i> <span data-i18n="site2_link">Ver Site</span>
                             </a>
                         </div>
                     </div>
@@ -280,14 +492,14 @@
                 <div class="project-card">
                     <div class="project-image">
                         <img src="imagens/emconstrucao.png" alt="Site em construção" />
-                        <div class="project-badge">Em Construção</div>
+                        <div class="project-badge" data-i18n="site_badge3">Em Construção</div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Site em Construção</h3>
-                        <p class="project-description">Novo projeto em andamento. Logo estará disponível aqui.</p>
+                        <h3 class="project-title" data-i18n="site3_title">Site em Construção</h3>
+                        <p class="project-description" data-i18n="site3_desc">Novo projeto em andamento. Logo estará disponível aqui.</p>
                         <div class="project-links">
                             <a href="#" class="project-link disabled">
-                                <i class="fas fa-tools"></i> Em Breve
+                                <i class="fas fa-tools"></i> <span data-i18n="site3_link">Em Breve</span>
                             </a>
                         </div>
                     </div>
@@ -296,45 +508,44 @@
         </section>
 
         <section class="section" id="contato">
-            <h2 class="section-title">Entre em Contato</h2>
+            <h2 class="section-title" data-i18n="contato_title">Entre em Contato</h2>
             <div class="contact-grid">
                 <div class="contact-card">
                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                     <div class="contact-info">
-                        <h3>Email</h3>
+                        <h3 data-i18n="contato_email_title">Email</h3>
                         <p><a href="mailto:Carlosgcbdh@gmail.com">Carlosgcbdh@gmail.com</a></p>
                     </div>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon"><i class="fas fa-phone"></i></div>
                     <div class="contact-info">
-                        <h3>Telefone</h3>
+                        <h3 data-i18n="contato_telefone_title">Telefone</h3>
                         <p><a href="https://wa.me/351926268368" target="_blank" rel="noopener noreferrer">+351 926 268 368</a></p>
                     </div>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                     <div class="contact-info">
-                        <h3>Localização</h3>
-                        <p>Portugal</p>
+                        <h3 data-i18n="contato_local_title">Localização</h3>
+                        <p data-i18n="contato_local">Portugal</p>
                     </div>
                 </div>
             </div>
             <div class="social-links">
-                <a href="https://github.com/Gustavoxsq" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/seuperfil" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.youtube.com/@gustavokkj7" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/Gustavoxsq" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/seuperfil" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@gustavokkj7" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Carlos Gustavo. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 <span data-i18n="footer_name">Carlos Gustavo</span>. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
+            </div>
+        </footer>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
