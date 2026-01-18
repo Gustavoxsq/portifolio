@@ -1,2 +1,8 @@
 # Local Netlify folder
 .netlify
+
+# Visual Studio
+.vs/
+
+# NÃO ignorar exe (precisa ficar assim)
+# *.exe
